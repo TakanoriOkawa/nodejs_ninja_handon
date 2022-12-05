@@ -5,9 +5,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && node dist/files.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.10"
+  }
 }
