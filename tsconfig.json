@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // コンパイルした後に動作させたいバージョンを指定する
+    "module": "CommonJS", // サーバーかフロントかで変更する
+    "outDir": "./dist", // 出力する ディレクトリ構成を保ったまま出力
+    "rootDir": "./src", // tscが処理を行う、ルートディレクトリを指定する。
+    "strict": true,
+  },
+  "include": ["src/**/*"], // コンパイルする対象ファイルを記述する
+  "exclude": ["dist", "node_modules"], // コンパイルから除外する
+  "compileOnSave": false
+}
