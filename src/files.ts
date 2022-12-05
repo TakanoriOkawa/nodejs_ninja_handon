@@ -1,7 +1,7 @@
-// const fs = require('fs');
 import * as fs from 'fs' // 読み込む　ESModule出ないと型がつかない。
 
-fs.readFile("./docs/blog1.txt", (err, data) => {
+// ファイルの読み込み
+fs.readFile("./docs/blog1.txt", (err, data) => { // 非同期処理
   if(err){
     console.log(err)
   }
@@ -9,4 +9,4 @@ fs.readFile("./docs/blog1.txt", (err, data) => {
   console.log(data.toString()) // テキスト形式で見たい場合
 })
 
-// ファイルの読み込み
+console.log('終了')
