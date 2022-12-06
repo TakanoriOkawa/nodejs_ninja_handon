@@ -18,4 +18,17 @@ fs.writeFile("./docs/blog2.txt", "hello coding", () => { // blog2.txtが存在�
   console.log("書き込み終了2")
 })
 
+const dirName =  'assets'
+
+// 同じディレクトリがあるとエラーになるので、existsSyncでチェック
+if(!fs.existsSync('./assets')) {
+  // ディレクトリ作成
+  fs.mkdir(`./${dirName}`, (err) => {
+    if(err) {
+      console.log(err);
+    }
+    console.log("folder created");
+  })
+}
+
 console.log('終了')
