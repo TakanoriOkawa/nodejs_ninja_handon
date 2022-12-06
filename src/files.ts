@@ -29,6 +29,14 @@ if(!fs.existsSync('./assets')) {
     }
     console.log("folder created");
   })
+}else {
+  // ディレクトリ削除
+  fs.rmdir(`./${dirName}` , (err) => {
+    if(err) {
+      console.log(err)
+    }
+    console.log('folder deleted')
+  })
 }
 
 console.log('終了')
