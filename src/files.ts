@@ -39,4 +39,12 @@ if(!fs.existsSync('./assets')) {
   })
 }
 
+// 特定のファイルの削除処理
+if(fs.existsSync('./docs/test.txt')) {
+  fs.unlink('./docs/test.txt', (err) => {
+    console.log(err)
+  })
+  console.log("file deleted");
+}
+
 console.log('終了')
