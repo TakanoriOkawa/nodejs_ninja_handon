@@ -5,7 +5,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && node dist/files.js"
+    "build": "tsc && node dist/server.js"
   },
   "keywords": [],
   "author": "",
