@@ -24,6 +24,12 @@ const server = http.createServer((req: Request ,res: Response ) => {
       path += 'about.html';
       res.statusCode = 200;
       break;
+    // about-meになったらリダイレクト処理を加える
+    case '/about-me':
+      res.statusCode = 301;
+      res.setHeader('Location', '/about');
+      res.end();
+      break;
     default:
       path += '404.html';
       res.statusCode = 404;
