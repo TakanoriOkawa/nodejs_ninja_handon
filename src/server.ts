@@ -1,17 +1,24 @@
 import * as http from 'http';
+import * as fs from 'fs';
 
-const server = http.createServer((req ,res ) => {
-  console.log('request made')
+type Request = http.IncomingMessage
+type Response = http.ServerResponse
+
+
+const server = http.createServer((req: Request ,res: Response ) => {
   console.log(req.url, req.method) // リクエストのURLとHTTPメソッドを取得
-
-  // プレーンなテキストをブラウザに返す設定
-  res.setHeader('Content-Type', 'text/plain');
-
-  // 文字列を返却
-  res.write('hello nodeJs');
-
-  // 終了
-  res.end();
+  
+  // htmlを返却する設定
+  res.setHeader('Content-Type', 'text/html');
+  // ルートディレクトリからのパスを指定
+  fs.readFile('./public/views/index.html', (err: any, data: any) => {
+    if(err) {
+      console.log(err);
+      res.end();
+    }else {
+      res.end(data)
+    }
+  })
 });
 
 server.listen(3000, 'localhost', () => {
