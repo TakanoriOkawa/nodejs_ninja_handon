@@ -30,3 +30,10 @@ app.get('/about', (req, res) => {
 app.get('/about-us', (req,res) => {
   res.redirect('/about')
 })
+
+// ミドルウェア関数
+// getリクエストがあった場合、処理を上から見ていき
+// 全てのURLに一致しない場合、以下が実行される
+app.use((req, res) => {
+  res.status(404).sendFile('./views/404.html', options)
+})
