@@ -1,6 +1,5 @@
-// const express = require('express');
 import * as express from 'express';
-import path = require('path');
+import * as morgan from 'morgan'
 
 const app = express();
 
@@ -16,6 +15,9 @@ app.use((req, res, next) => {
   console.log('method', req.method);
   next();
 })
+
+// サードパーティMiddlewareを実行
+app.use(morgan('dev'))
 
 const options = {
   root: __dirname,
