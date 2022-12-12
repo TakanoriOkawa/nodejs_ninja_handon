@@ -6,6 +6,16 @@ const app = express();
 
 app.listen(3000)
 
+
+// ミドルウェアの使い方
+// 必ず実行される
+app.use((req, res) => {
+  console.log('new request made');
+  console.log('host', req.hostname);
+  console.log('path', req.path);
+  console.log('method', req.method);
+})
+
 const options = {
   root: __dirname,
   headers: {
