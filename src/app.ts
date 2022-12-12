@@ -9,11 +9,12 @@ app.listen(3000)
 
 // ミドルウェアの使い方
 // 必ず実行される・nextが無いので次の処理へ行かないので注意
-app.use((req, res) => {
+app.use((req, res, next) => {
   console.log('new request made');
   console.log('host', req.hostname);
   console.log('path', req.path);
   console.log('method', req.method);
+  next();
 })
 
 const options = {
