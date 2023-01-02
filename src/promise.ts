@@ -50,10 +50,26 @@
 
 
 // *************コメント化解除③**************
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("成功")
-  },2000)
-})
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("成功")
+//   },2000)
+// })
 
-promise.then(data => console.log(data)); // promiseからresolveかrejectが来るのを待って、最終的にコンソール表示をしている
+// promise.then(data => console.log(data)); // promiseからresolveかrejectが来るのを待って、最終的にコンソール表示をしている
+
+
+function sleep() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("3秒待つ")
+      resolve("成功")
+    },3000)
+  });
+}
+
+// 即時関数
+(async () => {
+  const res = await sleep();
+  console.log(res)
+})();
