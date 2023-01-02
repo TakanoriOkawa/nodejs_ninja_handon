@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as morgan from 'morgan'
+import "./promise"
 
 const app = express();
 
