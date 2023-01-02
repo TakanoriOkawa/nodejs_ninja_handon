@@ -1,5 +1,6 @@
 // console.log("value!");
 
+// *************コメント化解除①**************
 // // 非同期処理が複数あった場合、それらを連続して実行したいとすると以下のようなコードになる
 // function sleep(cb: (val:number) => void, val: number) {
 //   setTimeout(() => {
@@ -16,6 +17,8 @@
 //   },val)
 // },0);
 
+
+// *************コメント化解除②**************
 
 // new Promise((resolve,reject) => {
 //   /*  同期処理される
@@ -43,10 +46,10 @@
 //   console.log("終了")
 // })
 
-
 // console.log("done script")
 
 
+// *************コメント化解除③**************
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("成功")
